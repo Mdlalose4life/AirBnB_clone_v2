@@ -41,5 +41,5 @@ def python(text='is_cool'):
     return "Python {}".format(text.replace("_", " "))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run()
