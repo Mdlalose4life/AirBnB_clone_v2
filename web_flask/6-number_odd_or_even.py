@@ -62,7 +62,7 @@ def odd_even(n):
     """
     Displays HTML and an n number.
     """
-    return render_template('5-number_template.py', n=n)
+    return render_template('6-number_odd_or_even.py', n=n)
 
 
 if __name__ == "__main__":
