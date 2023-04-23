@@ -6,7 +6,6 @@ script that starts a Web application
 
 from flask import Flask
 app = Flask(__name__)
-app.debug = True
 
 @app.route("/", strict_slashes=False)
 def hello():
@@ -41,12 +40,12 @@ def python(text="is_cool"):
     return "Python {}".format(text.replace("_", " "))
 
 
-@app.route("/number/<n>", strict_slashes=False)
+@app.route("/number/<int:n>", strict_slashes=False)
 def number(n):
     """
     Displays the n if n is an integer
     """
-    return "{} is a number".format(int(n))
+    return "{} is a number".format(n)
 
 
 if __name__ == "__main__":
