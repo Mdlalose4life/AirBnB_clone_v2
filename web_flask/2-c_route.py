@@ -22,7 +22,11 @@ def HBNB():
 
 @app.route("/c/<text>")
 def text(text):
-    string = "C {}".format(text.replace("_", ""))
+    """
+    Retuns the given string, and replaces underscores with
+    a space
+    """
+    string = "C {}".format(text.replace("_", " "))
     return string
 
 
