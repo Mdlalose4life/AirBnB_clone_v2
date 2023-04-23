@@ -7,6 +7,7 @@ script that starts a Web application
 from flask import Flask, render_template
 app = Flask(__name__)
 
+
 @app.route("/", strict_slashes=False)
 def hello():
     """ returns Hello HBNB """
@@ -31,7 +32,7 @@ def text(text):
 
 
 @app.route("/python")
-@app.route("/python/<text>",strict_slashes=False)
+@app.route("/python/<text>", strict_slashes=False)
 def python(text="is_cool"):
     """
     Displays Python then returns the given text then
