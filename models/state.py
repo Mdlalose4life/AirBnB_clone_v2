@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-#!/usr/bin/python3
 """This is the city class"""
 from sqlalchemy.ext.declarative import declarative_base
 from models.base_model import BaseModel, Base
