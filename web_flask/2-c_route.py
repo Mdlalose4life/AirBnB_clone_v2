@@ -20,6 +20,11 @@ def HBNB():
     return 'HBNB'
 
 
+@app.route("/c/<text>")
+def text(text):
+    string = "C {}".format(text.replace("_", ""))
+    return string
+
 
 if __name__ == '__main__':
     app.run()
