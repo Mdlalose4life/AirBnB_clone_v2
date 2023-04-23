@@ -43,25 +43,19 @@ def python(text="is_cool"):
 
 @app.route("/number/<int:n>", strict_slashes=False)
 def number(n):
-    """
-    Displays the n if n is an integer
-    """
+    """Displays the n if n is an integer"""
     return "{} is a number".format(n)
 
 
 @app.route("/number_template/<int:n>", strict_slashes=False)
 def number_template(n):
-    """
-    Render template with a number.
-    """
+    """Render template with a number."""
     return render_template('5-number.html', n=n)
 
 
 @app.route("/number_odd_or_even/<int:n>")
-def odd_even(n):
-    """
-    Displays HTML and an n number.
-    """
+def odd_or_even(n):
+    """Displays HTML and an n number."""
     return render_template('6-number_odd_or_even.py', n=n)
 
 
