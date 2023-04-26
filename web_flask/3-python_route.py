@@ -20,7 +20,7 @@ def HBNB():
     return 'HBNB'
 
 
-@app.route("/c/<text>")
+@app.route("/c/<text>", strict_slashes=False)
 def text(text):
     """
     Displays C then
@@ -31,8 +31,8 @@ def text(text):
     return string
 
 
-@app.route("/python")
-@app.route("/python/<text>")
+@app.route("/python", strict_slashes=False)
+@app.route("/python/<string:text>", strict_slashes=False)
 def python(text="is cool"):
     """
     Displays Python then returns the given text then
