@@ -33,7 +33,7 @@ def text(text):
 
 @app.route("/python")
 @app.route("/python/<text>")
-def python(text="is_cool"):
+def python(text="is cool"):
     """
     Displays Python then returns the given text then
     replaces underscores with a space
