@@ -19,7 +19,7 @@ class FileStorage:
                 partition = shlex.split(partition)
                 if (partition[0] == cls.__name__):
                     dic[key] = self.__objects[key]
-            return(dic)
+            return (dic)
         else:
             return self.__objects
 
@@ -47,10 +47,10 @@ class FileStorage:
         from models.review import Review
 
         classes = {
-                    'BaseModel': BaseModel, 'User': User, 'Place': Place,
-                    'State': State, 'City': City, 'Amenity': Amenity,
-                    'Review': Review
-                  }
+            'BaseModel': BaseModel, 'User': User, 'Place': Place,
+            'State': State, 'City': City, 'Amenity': Amenity,
+            'Review': Review
+        }
         try:
             temp = {}
             with open(FileStorage.__file_path, 'r') as f:
@@ -59,7 +59,7 @@ class FileStorage:
                     self.all()[key] = classes[val['__class__']](**val)
         except FileNotFoundError:
             pass
-    
+
     def delete(self, obj=None):
         """deletes the object from the attributes"""
         if obj is None:
@@ -71,4 +71,3 @@ class FileStorage:
     def close(self):
         """Calls the reload method"""
         self.reload()
-        
