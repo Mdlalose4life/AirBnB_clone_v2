@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """This is the city class"""
+import models
 from sqlalchemy.ext.declarative import declarative_base
 from models.base_model import BaseModel, Base
 from models import storage_type
@@ -17,7 +18,7 @@ class City(BaseModel, Base):
         name: input name
     """
     __tablename__ = "cities"
-    if storage_type == 'db':
+    if models.storage_type == 'db':
         name = Column(String(128), nullable=False)
         state_id = Column(String(60), ForeignKey('states.id'), nullable=False)
         places = relationship("Place", cascade='all, delete, delete-orphan',
@@ -25,6 +26,10 @@ class City(BaseModel, Base):
     else:
         name = ''
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+    if models.storage_type != 'db':
         @property
         def cities(self):
             related_cities = []
